@@ -21,12 +21,14 @@ q = deque([1])
 visited = [False] * (N+1)
 visited[0] = True
 
-#幅優先探索
+
+#深さ優先探索
 while q :
     print(q)
-    now = q.popleft() #前から取り出す
+    now = q.pop() #前から取り出す
     visited[now] = True
     point = P[now]
+    print("now:",now)
     for children in edge[now] : #隣接点に対して
         if not visited[children] :
             P[children] += point
